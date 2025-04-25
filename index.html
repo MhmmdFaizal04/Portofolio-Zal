@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Faizal - Business Card</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #34d399;
+            --secondary-color: #3b82f6;
+            --text-color: #e0e7ff;
+            --text-secondary: rgba(224, 231, 255, 0.85);
+            --bg-gradient: linear-gradient(135deg, #0a0823, #2a265f, #1b1a3e);
+            --card-bg: linear-gradient(145deg, rgba(20, 20, 50, 0.8), rgba(40, 40, 80, 0.8));
+            --btn-gradient: linear-gradient(45deg, #34d399, #3b82f6);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: var(--bg-gradient);
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        .business-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 2rem;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(52, 211, 153, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .business-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(52, 211, 153, 0.5);
+        }
+
+        .business-card .profile-pic {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 5px 15px rgba(52, 211, 153, 0.3);
+            border: 3px solid var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .business-card:hover .profile-pic {
+            transform: scale(1.05);
+        }
+
+        .business-card h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: var(--btn-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .business-card .title {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        .business-card .contact-info {
+            margin-bottom: 1.5rem;
+        }
+
+        .business-card .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0.8rem 0;
+            font-size: 1rem;
+        }
+
+        .business-card .contact-item i {
+            font-size: 1.3rem;
+            margin-right: 0.8rem;
+            color: var(--primary-color);
+        }
+
+        .business-card .contact-item a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .business-card .contact-item a:hover {
+            color: var(--primary-color);
+        }
+
+        .business-card .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .business-card .social-links a {
+            color: var(--text-color);
+            font-size: 1.8rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .business-card .social-links a:hover {
+            color: var(--primary-color);
+            transform: scale(1.2);
+        }
+
+        .business-card .portfolio-btn {
+            background: var(--btn-gradient);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(52, 211, 153, 0.4);
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+        }
+
+        .business-card .portfolio-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(52, 211, 153, 0.6);
+        }
+
+        .business-card .portfolio-btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .business-card .portfolio-btn:hover::after {
+            left: 100%;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .business-card {
+                padding: 1.5rem;
+                max-width: 350px;
+            }
+
+            .business-card .profile-pic {
+                width: 130px;
+                height: 130px;
+            }
+
+            .business-card h1 {
+                font-size: 1.8rem;
+            }
+
+            .business-card .title {
+                font-size: 1rem;
+            }
+
+            .business-card .contact-item {
+                font-size: 0.9rem;
+            }
+
+            .business-card .contact-item i {
+                font-size: 1.1rem;
+            }
+
+            .business-card .social-links a {
+                font-size: 1.5rem;
+            }
+
+            .business-card .portfolio-btn {
+                padding: 0.6rem 1.5rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .business-card {
+                padding: 1.2rem;
+                max-width: 300px;
+            }
+
+            .business-card .profile-pic {
+                width: 110px;
+                height: 110px;
+            }
+
+            .business-card h1 {
+                font-size: 1.5rem;
+            }
+
+            .business-card .title {
+                font-size: 0.9rem;
+            }
+
+            .business-card .contact-item {
+                font-size: 0.8rem;
+            }
+
+            .business-card .contact-item i {
+                font-size: 1rem;
+            }
+
+            .business-card .social-links a {
+                font-size: 1.3rem;
+            }
+
+            .business-card .portfolio-btn {
+                padding: 0.5rem 1.2rem;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="business-card">
+        <img src="img/saya.jpg" class="profile-pic">
+        <h1>Muhammad Faizal</h1>
+        <div class="title">Web Developer & UI/UX Enthusiast</div>
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:faisalxbaim@gmail.com">faisalxbaim@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-whatsapp"></i>
+                <a href="https://wa.me/6282347320955" target="_blank">+62 8234 7320 955</a>
+            </div>
+        </div>
+        <div class="social-links">
+            <a href="https://github.com/MhmmdFaizal04" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/muhammadfaizal" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://instagram.com/zallvisual" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+        <a href="portofolio.html" class="portfolio-btn">Portfolio Saya</a>
+    </div>
+</body>
+</html>
